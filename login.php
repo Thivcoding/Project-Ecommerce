@@ -1,57 +1,102 @@
 <?php
 session_start();
-include("./components/header.php") ?>
+include("./components/header.php")
+?>
+
 <style>
+    body {
+        background-color: #f5f6fa; /* simple clean background */
+    }
+
     .login {
-        background-image: url("https://i.makeagif.com/media/5-13-2023/0UjUAN.gif");
-        background-size: cover;
-        /* background-repeat: no-repeat; */
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .bag-card {
-        box-shadow: 0px 0px 7px white;
-        border-radius: 10px;
-        backdrop-filter: blur(5px);
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        border-radius: 15px;
     }
+
+    .form-control {
+        transition: all .3s ease;
+    }
+
+    .form-control:focus {
+        box-shadow: none;
+        border-bottom: 2px solid #0d6efd !important;
+        background-color: transparent;
+    }
+
     .form-control::placeholder {
-        color: white;
+        color: #6c757d;
         opacity: .8;
     }
+
+    .btn-outline-primary {
+        transition: all .3s ease;
+    }
+
+    .btn-outline-primary:hover {
+        background-color: #0d6efd;
+        color: #fff;
+        transform: translateY(-2px);
+    }
+
+    .card-header h4 {
+        font-weight: 600;
+    }
 </style>
-<main class="login" style="height: 100vh;">
-    <div class="container col-5 py-5 ">
-        <?php
-        if (isset($_SESSION['msg'])) {
-        ?>
+
+<main class="login">
+    <div class="container col-12 col-md-8 col-lg-5 py-5">
+
+        <?php if (isset($_SESSION['msg'])) { ?>
             <div class="alert <?= $_SESSION['msgType']; ?> alert-dismissible fade show" role="alert">
                 <strong>Dear User!</strong> <?= $_SESSION['msg']; ?>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
             </div>
         <?php }
         unset($_SESSION['msg']);
         ?>
-        <div class="bag-card card  text-white bg-transparent  mt-5">
-            <div class="card-header border-2 border-white text-center py-3">
+
+        <div class="bag-card card overflow-hidden shadow-sm">
+            <div class="card-header text-center pt-5 bg-white border-0">
                 <h4>Log In Form</h4>
             </div>
-            <div class="card-body py-5">
+
+            <div class="card-body pb-5">
                 <form method="post" action="./controller/authController.php" class="px-5">
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <div class="container px-4"><input type="email" name="email" placeholder="Email Address" class="form-control bg-transparent text-white shadow-none border-white border-0 border-bottom rounded-0" id="exampleInputEmail1" aria-describedby="emailHelp">
-                            <div id="emailHelp" class="form-text text-white">We'll never share your email with anyone else.</div>
+
+                    <div class="mb-4">
+                        <label class="form-label">Email address</label>
+                        <input type="email" name="email"
+                            placeholder="Email Address"
+                            class="form-control bg-transparent shadow-none border-0 border-bottom border-primary rounded-0">
+                        <div class="form-text">
+                            We'll never share your email with anyone else.
                         </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <div class="container px-4">
-                            <input placeholder="Password" type="password" name="password" class="form-control bg-transparent text-white shadow-none border-white border-0 border-bottom rounded-0" id="exampleInputPassword1">
-                        </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">Password</label>
+                        <input type="password" name="password"
+                            placeholder="Password"
+                            class="form-control bg-transparent shadow-none border-0 border-bottom border-primary rounded-0">
                     </div>
-                    <button type="submit" name="logBtn" class="btn float-end btn-outline-primary ">Sign In</button>
+
+                    <button type="submit" name="logBtn"
+                        class="btn btn-outline-primary float-end px-4">
+                        Sign In
+                    </button>
+
                 </form>
             </div>
         </div>
     </div>
 </main>
+
 <?php include("./components/footer.php") ?>

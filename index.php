@@ -131,7 +131,7 @@ unset($_SESSION['msgType']);
                                     </div>
                                     <div class="d-flex justify-content-between align-items-center mt-3">
                                         <span class="fw-bold text-primary"><?= $pro['selling_price'] ?>$</span>
-                                        <a href="category" class="btn btn-sm btn-outline-primary">
+                                        <a href="./category.php" class="btn btn-sm btn-outline-primary">
                                             <i class="fas fa-cart-plus"></i> View More
                                         </a>
                                     </div>
@@ -170,7 +170,7 @@ unset($_SESSION['msgType']);
                                     </div>
                                     <div class="d-flex justify-content-between align-items-center mt-3">
                                         <span class="fw-bold text-primary"><?= $pro['selling_price'] ?>$</span>
-                                        <a href="category" class="btn btn-sm btn-outline-primary">
+                                        <a href="./category.php" class="btn btn-sm btn-outline-primary">
                                             <i class="fas fa-cart-plus"></i> View More
                                         </a>
                                     </div>
@@ -210,7 +210,7 @@ unset($_SESSION['msgType']);
                                     </div>
                                     <div class="d-flex justify-content-between align-items-center mt-3">
                                         <span class="fw-bold text-primary"><?= $pro['selling_price'] ?>$</span>
-                                        <a href="category" class="btn btn-sm btn-outline-primary">
+                                        <a href="./category.php" class="btn btn-sm btn-outline-primary">
                                             <i class="fas fa-cart-plus"></i> View More
                                         </a>
                                     </div>
@@ -250,7 +250,7 @@ unset($_SESSION['msgType']);
                                     </div>
                                     <div class="d-flex justify-content-between align-items-center mt-3">
                                         <span class="fw-bold text-primary"><?= $pro['selling_price'] ?>$</span>
-                                        <a href="category" class="btn btn-sm btn-outline-primary">
+                                        <a href="./category.php" class="btn btn-sm btn-outline-primary">
                                             <i class="fas fa-cart-plus"></i> View More
                                         </a>
                                     </div>
