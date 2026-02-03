@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("../controller/redirect.php");
+include("../func/redirect.php");
 include("../model/db.php");
 if (isset($_GET['subBtn'])) {
     $name = mysqli_real_escape_string($conn, $_GET['userName']);
